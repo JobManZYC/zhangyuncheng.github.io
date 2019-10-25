@@ -1,0 +1,28 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8091/eureka/
+server:
+  port: 8084
+spring:
+  application:
+    name: service-zuul
+zuul:
+  host:
+    connect-timeout-millis: 300000
+    socket-timeout-millis: 300000
+#  ignoredPatterns: /**/user/login/**   # 忽略所有包括/admin/的路径
+  routes:
+    api-a:
+      path: /userzuul/**
+      serviceId: user-eureka
+    api-b:
+      path: /merchantzuul/**
+      serviceId: merchant-eureka
+  # 解决重定向问题
+  add-host-header: true
+  # 默认过滤header列表为空
+  sensitiveHeaders: 
+ribbon:
+  ReadTimeout: 300000
+  ConnectTimeout: 300000

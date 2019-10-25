@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+
+<title>登录界面</title>
+</head>
+<body>
+	<div>
+		<form action="getupdatemerchantinfo" method="post">
+			商家名：<input type="text" width="100px" id="merchant" name="merchant" />
+			商品名：<input type="text" width="100px" id="commodity" name="commodity" />
+			数量：<input type="text" width="100px" id="number" name="number" /> 
+			<input type="submit" value="提交" />
+		</form>
+	</div>
+	<div>
+		<a href="getuserinfo"><h4>用户信息</h4></a>
+	</div>
+	<div>
+		<a href="getallmerchantinfos"><h4>商家信息</h4></a>
+	</div>
+	<div>
+		<a href="getallmerchantinfos111"><h4>订单信息</h4></a>
+	</div>
+
+
+	<div region="north" style="height: 280px; background-color: #E0EDFF">
+		<table>
+			<tr style="height: 30px">
+				<td width="100px">编号</td>
+				<td width="100px">商家名</td>
+				<td width="100px">商品名</td>
+				<td width="100px">单价</td>
+				<td width="100px">数量</td>
+			</tr>
+			<tbody id="tbody">
+				<tr th:each="info : ${userModel.allInfo}" style="height: 30px">
+					<td th:text="${info.id}"></td>
+					<td th:text="${info.merchant}"></td>
+					<td th:text="${info.commodity}"></td>
+					<td th:text="${info.price}"></td>
+					<td th:text="${info.acount}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

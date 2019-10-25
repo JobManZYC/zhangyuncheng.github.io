@@ -1,0 +1,4 @@
+com\zyc\springcloud\config\WebConfig.class
+com\zyc\springcloud\filter\MyFilter.class
+com\zyc\springcloud\GatwayApplication.class
+com\zyc\springcloud\jwt\JWTVerifies.class

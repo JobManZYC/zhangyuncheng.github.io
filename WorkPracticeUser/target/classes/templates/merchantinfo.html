@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>商家信息</title>
+</head>
+<body>
+<div region="north" style="height: 280px;background-color: #E0EDFF">
+		<table style="height:30px">
+			<tr>
+				<td width="100px">编号</td>
+				<td width="100px">商家名</td>
+				<td width="100px">余额</td>
+			</tr>
+				<tbody id="tbody">
+				<tr th:each="info : ${merchantInfoModel.merchantinfo}" style="height:30px">
+					<td th:text="${info.id}"></td>
+					<td th:text="${info.merchant}"></td>
+					<td th:text="${info.money}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

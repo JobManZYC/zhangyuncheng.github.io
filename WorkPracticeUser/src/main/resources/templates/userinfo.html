@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>用户信息</title>
+</head>
+<body>
+<div region="north" style="height: 280px;background-color: #E0EDFF">
+		<table style="height:30px">
+			<tr>
+				<td width="100px">用户名</td>
+				<td width="100px">权限</td>
+				<td width="100px">余额</td>
+			</tr>
+				<tbody id="tbody">
+				<tr th:each="info : ${userInfoModel.userinfo}" style="height:30px">
+					<td th:text="${info.username}"></td>
+					<td th:text="${info.permission}"></td>
+					<td th:text="${info.money}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

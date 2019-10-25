@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+
+<title>注册界面</title>
+</head>
+<body>
+	<div align="center" style="padding-top: 50px;">
+		<form action="registers" method="post" name="form1">
+			<table  height="800">
+				<tr height="280">
+					<td colspan="4"></td>
+				</tr>
+				<tr height="50">
+					<td width="40%"></td>
+					<td width="10%">用户名：</td>
+					<td><input type="text" name="username" id="username" /></td>
+					<td width="30%"></td>
+				</tr>
+				<tr height="50">
+					<td width="40%"></td>
+					<td width="10%">密 码：</td>
+					<td><input type="password" name="password" id="password" /></td>
+					<td width="30%"></td>
+				</tr>
+				<tr height="50">
+					<td width="40%"></td>
+					<td width="10%">确认密 码：</td>
+					<td><input type="password" name="repeatpassword" id="repeatpassword" /></td>
+					<td width="30%"></td>
+				</tr>
+				<tr height="50">
+					<td width="40%"></td>
+					<td width="10%">金钱：</td>
+					<td><input type="text" name="money" id="money" /></td>
+					<td width="30%"></td>
+				</tr>
+ 				<tr height="50">
+					<td width="40%"></td>
+					<td width="10%"><input type="submit" value="提交"/></td>
+					<td width="30%"></td>
+				</tr>
+				 <tr height="10">
+					<td width="40%"></td>
+					<td><p style="color: red" th:text="${msg}" id="msg"/></td>
+				</tr> 
+				<tr>
+					<td></td>
+				</tr> 
+			</table>
+		</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+com\zyc\springcloud\service\CommodityInfoService.class
+com\zyc\springcloud\service\MerchantInfoService.class
+com\zyc\springcloud\entity\MerchantInfo.class
+com\zyc\springcloud\service\UpdateMerchantInfoService.class
+com\zyc\springcloud\MerchantApplication.class
+com\zyc\springcloud\controller\MerchantInfoController.class
+com\zyc\springcloud\controller\UpdateMerchantInfoController.class
+com\zyc\springcloud\controller\CommodityInfoController.class
+com\zyc\springcloud\service\SelectMerchantInfo.class
+com\zyc\springcloud\mapper\MerchantMapper.class
+com\zyc\springcloud\entity\CommodityInfo.class

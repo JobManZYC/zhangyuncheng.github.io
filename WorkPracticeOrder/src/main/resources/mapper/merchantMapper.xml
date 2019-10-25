@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zyc.springcloud.mapper.MerchantMapper">
+
+	<!-- 购买一次生成一次订单信息 -->
+	<insert id="getOrderMapper" parameterType="com.zyc.springcloud.entity.OrderInfo">
+		INSERT INTO t_orderinfo (username,merchant,commodity,price,number,totalprice) 
+		VALUES (#{username},#{merchant},#{commodity},#{number},#{price},#{totalprice})
+    </insert>	
+	
+</mapper>

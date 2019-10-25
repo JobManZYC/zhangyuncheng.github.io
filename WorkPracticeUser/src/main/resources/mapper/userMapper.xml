@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zyc.springcloud.mapper.UserMapper">
+	<select id="getPassword" resultType="String"
+		parameterType="String">
+		select u.password
+		from t_user u
+		where u.username=#{username}
+	</select>
+
+	<insert id="instUser">
+		insert into t_user(username,password,role,permission,ban,money)
+		values (#{username},#{password},#{role},#{permission},#{ban},#{money})
+	</insert>
+	
+	<select id="getAllUser" resultType="com.zyc.springcloud.entity.User">
+		select *
+		from t_user
+	</select>
+
+	<select id="getMoney" resultType="float">
+		select u.money
+		from t_user u
+		where u.username=#{username}	
+	</select>
+	
+	<select id="getUserInfo" resultType="com.zyc.springcloud.entity.User">
+		select *
+		from t_user u
+		where u.username=#{username}
+	</select>
+	
+	
+	<update id="UpdateUserMoney">
+		update t_user u
+		set u.money=u.money-#{totalPrice}
+		where u.username=#{username}
+	</update>
+
+</mapper>

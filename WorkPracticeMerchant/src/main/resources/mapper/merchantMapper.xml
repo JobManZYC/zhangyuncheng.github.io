@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zyc.springcloud.mapper.MerchantMapper">
+	<!-- 获取所有商品信息 -->
+	<select id="getAllCommodities"  resultType="com.zyc.springcloud.entity.CommodityInfo">
+        SELECT *
+        FROM t_commodityinfo
+    </select>
+   <!-- 获取所有商家余额信息 -->
+   <select id="getAllMerchantInfo" resultType="com.zyc.springcloud.entity.MerchantInfo">
+   		select * 
+    	from t_merchantinfo
+   </select>
+   	<!-- 根据商家名和商品名去查询价格 -->
+	<select id="getPrice"  resultType="float">
+		select price
+		from t_commodityinfo c
+		where c.merchant=#{merchant} and c.commodity=#{commodity}
+	</select>
+
+	<!-- 生成订单后金额数量的变化 -->
+ 	 <update id="UpdateMerchantInfo">
+		UPDATE t_commodityinfo c,t_merchantinfo m
+        SET m.money=m.money+#{totalPrice},c.acount=c.acount-#{number}
+        WHERE m.merchant=c.merchant and c.commodity=#{commodity} and c.merchant=#{merchant}
+	</update>
+</mapper>
